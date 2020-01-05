@@ -1,0 +1,13 @@
+ .mytitle {
+    color: white;
+    text-align: center;
+    background-image: url('http://www.forest.go.kr/newkfsweb/cmm/fms/FileDown.do?atchFileId=FILE_000000010008639&fileSn=0');
+    background-size: cover;
+    background-position: center;
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+}
+* {
+    font-family: 'Yeon Sung', cursive;
+}
