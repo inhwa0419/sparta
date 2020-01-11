@@ -33,21 +33,34 @@
       color: blue;
       font-weight: bold;
     }
-    .middle{
-      margin: auto;
-      border-width: 2px;
-      border-color: black;
-      margin-bottom: 30px;
-      border-radius: 10px;
-      padding: 10px;
+    .form-post {
+      max-width: 500px;
+      padding: 2rem;
+      margin: 2rem auto;
+      border-color: #e9ecef;
+      border-radius: 0.3rem;
+      border: solid;
+      display: block;
     }
-    form > .form-group1{
-      font-weight: bold;
+    #posting-box {
+      display: none;
     }
-
-
-
   </style>
+
+  <script>
+   function openclose() {
+    // id 값 posting-box의 display 값이 block 이면
+    if ( $('#posting-box').css('display') == 'block' ) {
+      // posting-box를 가리고
+      $('#posting-box').hide();
+      $('#btn-posting-box').text('포스팅 박스 열기')
+    } else {
+      // 아니면 posting-box를 펴라
+      $('#posting-box').show();
+      $('#btn-posting-box').text('포스팅 박스 닫기')
+    }
+  }
+</script>
 
 </head>
 <body>
@@ -57,26 +70,23 @@
       <p class="lead">중요한 링크를 저장해두고, 나중에 볼 수 있는 공간입니다</p>
       <hr class="my-4">
       <p class="lead">
-        <a class="btn btn-primary btn-lg" href="#" role="button">포스팅박스 열기</a>
+        <button id="btn-posting-box" onclick="openclose()" type="button" class="btn btn-primary">포스팅 박스 열기</button>
       </p>
     </div>
 
-<div class="card middle" style="width: 30rem;">
-  <div class="card-body">
-    <form>
-  <div class="form-group1">
-    <label for="exampleFormControlInput1">아티클 URL</label>
-    <input type="email" class="form-control" id="exampleFormControlInput1">
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlTextarea1">간단 코멘트</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-  </div>
-  <button type="submit" class="btn btn-primary">기사저장</button>
-</form>
-  </div>
-</div>
-
+    <div id="posting-box" class="form-post">
+      <form>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">아티클 URL</label>
+          <input id="posting-url" class="form-control" placeholder="">
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">간단 코멘트</label>
+          <input id="posting-comment" class="form-control" placeholder="">
+        </div>
+        <button onclick="posting()" type="button" class="btn btn-primary">기사저장</button>
+      </form>
+    </div>
 
     <div class="card-columns">
       <div class="card">

@@ -1,0 +1,52 @@
+2020.01.11(토)
+
+-함수
+-variable vs let
+-사칙연산, string
+-boolean
+-list & dictoinary
+-%
+-upper case
+-split, join
+
+함수
+function hey(){
+	alerty('hey!!');
+}
+
+변수
+var: 수정 가능, 새로 선언 가능
+let: 수정 가능, 새로 선언 불가능
+const(상수): 수정 불가능, 새로 선언 불가능
+
+리스트
+var a = [ , , ] -> 리스트 순서O
+
+스트링
+.toUpperCase() : 대문자 변환
+var address = "inhwa0419@gmail.com"
+address.split("@") -> @(구분자)기준으로 두개로 나누어짐
+다시 합치려면 .join("@") -> string으로 이루어져 있는 list
+
+jquery
+$(#id).val()
+
+api
+API(Application Programming Interface, 응용 프로그램 프로그래밍 인터페이스)는 응용 프로그램에서 사용할 수 있도록, 운영체제나 프로그래밍 언어가 제공하는 기능을 제어할 수 있게 만든 인터페이스를 뜻한다
+
+ajax
+Asynchronous Javascript And Xml(비동기식 자바스크립트와 xml)
+화면에 전체 갱신 없이 내부에서 서버와 통신 하는 것
+받은 데이터로 javascript에서 ui조작을 하여 전체 갱신 없이 ui의 일부분만 동적인 변경이 가능하게 된다
+비동기 서버 통신 방식
+비동기: 돌려놓고 다른 일을 하는 것
+동기: 순서가 명확할 때 사용, 하나가 끝나면 그다음 하나를 하는 것
+
+json
+key, value로 이루어져 있다
+Get: 정보를 가져 올 때 사용 , Request Mathod, Body X, 빠르게 가져와야 하기 때문에
+Post: 정보를 입력, 수정, 삭제 -> 데이터에 대한 변환이 이루어짐, Body O
+Header: 서버가 알아 듣기 쉬운 정보들
+Body: 민감한 정보들
+
+

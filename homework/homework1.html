@@ -20,89 +20,137 @@
   <!-- 구글 폰트 -->
   <link href="https://fonts.googleapis.com/css?family=Gamja+Flower|Stylish|Yeon+Sung&display=swap" rel="stylesheet">
 
-  <style type="text/css">
-    * {
-     font-family: 'Stylish', sans-serif;   }
+  <link rel="stylesheet" href="homework1.css" />
 
-     .card{
-      margin: auto;
-      border: hidden;
+  <script type="text/javascript">
+
+    function isCellPhone(p) {
+      var regPhone = /^01([0|1|6|7|8|9]?)-([0-9]{3,4})-([0-9]{4})$/;
+      return regPhone.test(p);
+    }
+    
+
+    function button(){
+      var name = $('#name').val();
+      var num = $('#num').val();
+      var address = $('#address').val();
+      var phonnum = $('#phonnum').val();
+
+      if(name == ""){
+       alert("이름을 입력해주세요!");
+       $('#name').focus();
      }
+     else if(num == ""){
+      alert("수량을 선택해주세요!");
+      $('#num').focus();
+    }
+    else if(address== ""){
+      alert("주소를 입력해주세요!");
+      $('#address').focus();
+    }
+    else if(phonnum == ""){
+      alert("전화번호를 입력해주세요!");
+      $('#phonnum').focus();
+    }
+    else if (isCellPhone(phonnum)!=1) {
+      alert("잘못된 휴대폰 번호입니다. 숫자, - 를 포함한 숫자만 입력하세요.");
+      $('#phonnum').focus();
+    }
+    else{
+      alert("주문완료!");
+      var rowItem = "<tr>";
+      rowItem += "<td>" + name + "<td>";
+      rowItem += "<td>" + num + "<td>";
+      rowItem += "<td>" + address + "<td>";
+      rowItem += "<td>" + phonnum + "<td>";
+      rowItem += "</tr>";
+      $('#orders-box').append(rowItem);
+    }
+  }
+  
 
-     .button > button{
-      margin-top: 10px;
-      margin-left: 45%;
-     }
+</script>
+</head>
 
-     
-   
-
-     
-
-   </style>
- </head>
-
- <body>
+<body>
   <div class="card" style="width: 38rem;">
     <img src="http://shop1.phinf.naver.net/20191026_199/1572087105239wavgt_JPEG/9446939788102458_433259171.jpg" class="card-img-top" alt="...">
     <div class="card-body">
       <div class="container">
-  <div class="row">
-    <div class="col-sm">
-     <h3 class="card-title">온스니즘 하찌 니트</h3>
-    </div>
-    <div class="col-sm" style="padding-top: 10px;">
-       가격: 31000원 / 개
-    </div>
-    
-  </div>
-</div>
+        <div class="row">
+          <div class="col-sm">
+           <h3 class="card-title">온스니즘 하찌 니트</h3>
+         </div>
+         <div class="col-sm" style="padding-top: 10px;">
+           가격: 31000원 / 개
+         </div>
 
-      <p class="card-text">전체적으로 깔끔하게 떨어지는 스탠다드한 디자인으로 남녀 불문하고 잘 어울리는 제품입니다. <br> 제품 두께감도 적당히 두꺼워 구매하시면 가장 기본적으로 찾게 되고 만족하실 제품입니다.</p>
+       </div>
+     </div>
 
-      <form>
+     <p class="card-text">전체적으로 깔끔하게 떨어지는 스탠다드한 디자인으로 남녀 불문하고 잘 어울리는 제품입니다. <br> 제품 두께감도 적당히 두꺼워 구매하시면 가장 기본적으로 찾게 되고 만족하실 제품입니다.</p>
+
+     <form>
        <h3 class="form-title">주문하기</h3>
        <div class="col-auto">
         <label class="sr-only" for="inlineFormInputGroup">Username</label>
-        <div class="input-group mb-2">
+        <div class="input-group mb-1">
           <div class="input-group-prepend">
             <div class="input-group-text">주문자 이름</div>
           </div>
-          <input type="text" class="form-control" id="inlineFormInputGroup">
+          <input type="text" class="form-control" id="name">
         </div>
       </div>
       <div class="col-auto">
         <label class="sr-only" for="inlineFormInputGroup">Username</label>
         <div class="input-group mb-2">
-          <div class="input-group-text">수량</div>
-          <select class="custom-select" id="validationCustom04" required>
-            <option selected disabled value="">--수량을 선택해 주세요--</option>
-            <option>...</option>
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">수량</label>
+          </div>
+          <select class="custom-select" id="num">
+            <option selected="" value=""> -- 수량을 선택하세요 -- </option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
           </select>
         </div>
       </div>
       <div class="col-auto">
         <label class="sr-only" for="inlineFormInputGroup">Username</label>
-        <div class="input-group mb-2">
+        <div class="input-group mb-3">
           <div class="input-group-prepend">
             <div class="input-group-text">주소</div>
           </div>
-          <input type="text" class="form-control" id="inlineFormInputGroup">
+          <input type="text" class="form-control" id="address">
         </div>
       </div>
       <div class="col-auto">
         <label class="sr-only" for="inlineFormInputGroup">Username</label>
-        <div class="input-group mb-2">
+        <div class="input-group mb-4">
           <div class="input-group-prepend">
             <div class="input-group-text">전화번호</div>
           </div>
-          <input type="text" class="form-control" id="inlineFormInputGroup">
+          <input type="text" class="form-control" id="phonnum">
         </div>
       </div>
 
     </form>
-    <div class="button"><button type="button" class="btn btn-primary">주문하기</button></div>
+    <div class="button"><button type="button" class="btn btn-primary" onclick="button()">주문하기</button></div>
     
+  </div>
+  <div class="orders">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">이름</th>
+          <th scope="col">수량</th>
+          <th scope="col">주소</th>
+          <th scope="col">전화번호</th>
+        </tr>
+      </thead>
+      <tbody id="orders-box">
+      </tbody>
+    </table>
   </div>
 </div>
 
