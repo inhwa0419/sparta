@@ -59,10 +59,10 @@
     else{
       alert("주문완료!");
       var rowItem = "<tr>";
-      rowItem += "<td>" + name + "<td>";
-      rowItem += "<td>" + num + "<td>";
-      rowItem += "<td>" + address + "<td>";
-      rowItem += "<td>" + phonnum + "<td>";
+      rowItem += "<td>" + name + "</td>";
+      rowItem += "<td>" + num + "</td>";
+      rowItem += "<td>" + address + "</td>";
+      rowItem += "<td>" + phonnum + "</td>";
       rowItem += "</tr>";
       $('#orders-box').append(rowItem);
     }
@@ -165,10 +165,10 @@
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">이름</th>
-          <th scope="col">수량</th>
-          <th scope="col">주소</th>
-          <th scope="col">전화번호</th>
+          <th>이름</th>
+          <th>수량</th>
+          <th>주소</th>
+          <th>전화번호</th>
         </tr>
       </thead>
       <tbody id="orders-box">
